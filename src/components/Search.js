@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js'
+import { Container, Row, Col, Form, Button,Modal } from 'react-bootstrap';
+import './Search.css';
+
 
 const Search = () => {
   const [query, setQuery] = useState('');
   const [searchResultsAPI, setSearchResultsAPI] = useState('');
-  const [noResultsModalVisible, setNoResultsModalVisible] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -22,7 +29,8 @@ const Search = () => {
           const items = data.collection.items;
           if (items.length === 0) {
             // Display the "no results" modal
-            setNoResultsModalVisible(true);
+            setShowModal(true);
+            setModalMessage('Your search did not match any results. Please try a different search term.');
           } else {
             // Convert the API response to an array of search result objects
             const searchResultsAPI = items.map(item => {
@@ -65,16 +73,29 @@ const Search = () => {
     setQuery(event.target.value);
   };
 
-  const handleModalClose = () => {
-    setNoResultsModalVisible(false);
-  };
+ 
 
   return (
     <div>
-      <form onSubmit={handleSearch}>
-        <input type="text" value={query} onChange={handleQueryChange} />
-        <button type="submit">Search</button>
-      </form>
+          <Container>
+      <Row className="justify-content-center">
+        <Col xs={12} md={8} lg={6}>
+          <Form onSubmit={handleSearch}>
+            <Form.Group controlId="formBasicSearch">
+              <Form.Control
+                type="text"
+                placeholder="Enter your search query"
+                value={query}
+                onChange={handleQueryChange}
+              />
+            </Form.Group>
+            <Button className="btn" type="submit">
+              NASA Search
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
       {searchResultsAPI.length > 0 && (
         <ul>
           {searchResultsAPI.map(result => (
@@ -87,28 +108,19 @@ const Search = () => {
           ))}
         </ul>
       )}
-      {noResultsModalVisible && (
-        <div className="modal">
-             {/*  Bootstrap modal for displaying no search results */}
-      <div id="no-results-modal" className ="modal fade" role="dialog">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <button type="button" className="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div className="modal-body">
-              <p>Your search did not match any results. Please try a different search term.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-          {/* <p>No results found.</p> */}
-          <button onClick={handleModalClose}>Close</button>
-        </div>
-      )}
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+       <Modal.Header closeButton>
+       <Modal.Title>No Results Found</Modal.Title>
+        </Modal.Header>
+          <Modal.Body>
+          <p>{modalMessage}</p>
+      </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => setShowModal(false)}>
+            Close
+          </Button>
+      </Modal.Footer>
+      </Modal>
     </div>
   );
 };
