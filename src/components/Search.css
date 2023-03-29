@@ -28,7 +28,7 @@
     top: 0;
     height: 490%;
     width: 140%;
-    background: #4168ea;
+    background: #f4f40c;
     -webkit-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
     -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
@@ -37,5 +37,7 @@
   
   .btn:hover:after {
     -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
-    transform: translateX(-85%) translateY(-25%) rotate(45deg);
+    transform: translateX(-88%) translateY(-25%) rotate(45deg);
   }
+
+ 

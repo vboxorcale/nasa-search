@@ -7,9 +7,9 @@ import './Search.css';
 
 const Search = () => {
   const [query, setQuery] = useState('');
-  const [searchResultsAPI, setSearchResultsAPI] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
+  const [searchResultsAPI, setSearchResultsAPI] = useState([]);
 
 
   const handleSearch = (event) => {
@@ -33,7 +33,8 @@ const Search = () => {
             setModalMessage('Your search did not match any results. Please try a different search term.');
           } else {
             // Convert the API response to an array of search result objects
-            const searchResultsAPI = items.map(item => {
+            const searchResultsAPIs = Array.isArray(items) ? 
+            items.map(item => {
               const title = item.data[0].title;
               const imageUrl = item.links[0].href;
               const description = item.data[0].description;
@@ -48,11 +49,12 @@ const Search = () => {
                 location,
                 photographer
               };
-            });
+            }) : [];
+            console.log(searchResultsAPIs)
             // Store the search query and results in local storage
-            localStorage.setItem(query, JSON.stringify(searchResultsAPI));
+            localStorage.setItem(query, JSON.stringify(searchResultsAPIs));
             // Set the search results state
-            setSearchResultsAPI(searchResultsAPI);
+            setSearchResultsAPI(searchResultsAPIs);
           }
         })
         .catch(error => {
