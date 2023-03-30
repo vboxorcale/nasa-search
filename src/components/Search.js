@@ -70,7 +70,7 @@ const Search = () => {
         });
     }
   };
-
+  //handleQueryChange function is defined to update the query state when the user enters a search query.
   const handleQueryChange = (event) => {
     setQuery(event.target.value);
   };
@@ -110,7 +110,10 @@ const Search = () => {
           ))}
         </ul>
       )}
+      
       <Modal show={showModal} onHide={() => setShowModal(false)}>
+        {/* The Modal component from React Bootstrap is used to display 
+        a modal with a message when there are no search results. */}
        <Modal.Header closeButton>
        <Modal.Title>No Results Found</Modal.Title>
         </Modal.Header>

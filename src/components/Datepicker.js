@@ -58,7 +58,7 @@ class Datepicker extends Component {
     return (
       <div>
         <div className="datepicker">
-            <h1>Pick a Date to select the picture of the date</h1>
+            <h1 className="ChangaOne">Pick a Date to select the picture of the date</h1>
           <Flatpickr
             value={date} // Sets the initial value of the Flatpickr datepicker to the current state's date value
             onChange={([date]) => { // Sets the callback function that runs when the datepicker value changes
