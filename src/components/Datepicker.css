@@ -1,3 +1,11 @@
+body{
+    margin: 2em;
+    background-image:url(../images/main.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+  
+}
 .wrapper-info {
     background-color: #f7f7f7;
     border: 1px solid #ddd;
@@ -26,4 +34,37 @@
   #wrapper-copyright {
     font-size: 14px;
     color: #666;
+  }
+
+  #wrapper-hdurl {
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  #wrapper-hdurl:hover #wrapper-image {
+    transform: scale(1.1);
+  }
+  
+  #wrapper-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card-img-top {
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #wrapper-image {
+    margin: auto;
+    display: block;
+    width: 1000px; /* set the width to 300px or any value that suits your needs */
+    height: auto;
+  }
+
+  .ChangaOne{
+    font-family: 'Changa One', cursive;
+    color: #f7f7f7;
   }
