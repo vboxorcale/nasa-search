@@ -1,5 +1,6 @@
 * https://nasa-react-search.netlify.app/
-#Datepicker.js
+
+## Datepicker.js
 
 * This is a React component that displays NASA's Astronomy Picture of the Day (APOD) based on the date selected using a date picker.
 
