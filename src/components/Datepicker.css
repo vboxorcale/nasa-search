@@ -1,9 +1,6 @@
 body{
     margin: 2em;
-    background-image:url(../images/main.gif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: center;
+   
   
 }
 .wrapper-info {
@@ -81,5 +78,5 @@ body{
 
   .ChangaOne{
     font-family: 'Changa One', cursive;
-    color: #f7f7f7;
+    color: black;
   }
