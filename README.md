@@ -1,3 +1,13 @@
+* https://nasa-react-search.netlify.app/
+#Datepicker.js
+
+* This is a React component that displays NASA's Astronomy Picture of the Day (APOD) based on the date selected using a date picker.
+
+* The component uses the Flatpickr library to create a datepicker that allows users to select a date. When a new date is selected, the component's state is updated with the new date, and the fetchData() method is called to fetch data from the NASA API based on the selected date.
+
+* The data returned by the API is used to update the component's state with the media type (image or video), title, explanation, image URL, and high-definition image URL (if available). The component then renders the APOD based on the media type. If the media type is an image, the component renders the image with a link to the high-definition version. If the media type is a video, the component renders an iframe with the video embedded.
+
+* The component also displays the title, explanation, date, and copyright information for the selected APOD.
 # Search.js
 
 * This is a functional component named Search.js which is under src/components,it demonstrates how to use React useState to pass data between components in a React application.
