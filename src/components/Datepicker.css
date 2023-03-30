@@ -1,0 +1,29 @@
+.wrapper-info {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  #wrapper-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #wrapper-explanation {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  #wrapper-date {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  #wrapper-copyright {
+    font-size: 14px;
+    color: #666;
+  }
