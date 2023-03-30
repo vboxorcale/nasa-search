@@ -60,8 +60,23 @@ body{
   #wrapper-image {
     margin: auto;
     display: block;
-    width: 1000px; /* set the width to 300px or any value that suits your needs */
+    max-width: 1000px; /* set the max-width to 100% to make the image responsive */
     height: auto;
+
+  }
+
+  /* apply different styles for screens with a maximum width of 600px */
+@media (max-width: 600px) {
+    #wrapper-image {
+      max-width: 100%;
+    }
+  }
+  
+  /* apply different styles for screens with a maximum width of 900px */
+  @media (max-width: 900px) {
+    #wrapper-image {
+      max-width: 90%;
+    }
   }
 
   .ChangaOne{
