@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.datepicker{
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 290px;
+    padding: 10px;
+}
